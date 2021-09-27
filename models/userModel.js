@@ -1,4 +1,4 @@
-const mongoo = require("mongoose")
+const mongoose = require("mongoose")
 
 //schema
 const userSchema = mongoose.Schema({
@@ -6,7 +6,6 @@ const userSchema = mongoose.Schema({
         type: String,
         required: [true, "Por favor, ingresa tu nombre."]
     },
-    lastName: String,
     username: {
         type: String,
         required: [true, "Ingresa un usuario válido (minúsculas)."],

@@ -1,0 +1,7 @@
+<h2>Todos mis vuelos/h2>
+    <div>
+        {{#each flights}}
+            <h3>{{date}}</h3>
+           <button><a href="/flights/{{_id}}">Detalles</a></button>
+        {{/each}}
+    </div>
