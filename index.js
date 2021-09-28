@@ -32,6 +32,9 @@ app.use((req, res, next) => {
 app.use("/user", require("./routes/user.routes"))
 const auth = require("./routes/auth.routes");
 app.use("/auth", auth);
+const flights = require("./routes/flights.routes")
+app.use("/flights", flights)
+
 
 app.get("/", (req, res) => {
     res.render("index") //render para hbs

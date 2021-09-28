@@ -1,7 +1,11 @@
-<h2>Todos mis vuelos/h2>
+<h2>Todos mis vuelos</h2>
     <div>
         {{#each flights}}
             <h3>{{date}}</h3>
+            <p>{{from}}</p>
+            <p>{{to}}</p>
+            <p>{{plate}}</p>
+
            <button><a href="/flights/{{_id}}">Detalles</a></button>
         {{/each}}
     </div>

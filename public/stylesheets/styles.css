@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;400&family=Montserrat:ital,wght@0,100;0,400;0,700;1,300&display=swap");
+/*
+  font-family: 'Bebas Neue', cursive;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Montserrat", sans-serif;
+*/
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+}
+
+.home {
+  background-image: url("../images/moving.gif");
+  font: 20px "Montserrat", sans-serif;
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 650px;
+  padding-top: 50px;
+  position: relative;
+  color: rgb(26, 30, 36);
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-bar-ul {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-bar-ul li {
+  list-style-type: none;
+  text-align: center;
+  color: rgb(236, 221, 189);
+}
+
+.nav-bar {
+  background-color: rgb(4, 53, 117);
+  padding: 14px 0;
+}
+.nav-bar a {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: rgb(236, 221, 189);
+}

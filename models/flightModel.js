@@ -6,17 +6,17 @@ const flightSchema = mongoose.Schema({
         required: [true, "Por favor ingresa una fecha"],
     },
     from: {
-        type: Number,
-        required: true
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "airports"
     },
     to: {
-        type: Number,
-        required: true 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "airports"
     },
-    kind: String, //local, ruta
+    kind: String, //local, ruta, toque y despegues
     plate: {
         type: String,
-        required: true,
+        required: [true, "Ingresa una matrícula."],
         uppercase: true
     },
     model: {
@@ -24,18 +24,22 @@ const flightSchema = mongoose.Schema({
         required: true,
         uppercase: true
     },
-    time: {
+    timeH: {
         type: Number,
-        required: true
-    },
+        required: [true, "Ingresa las HORAS del vuelo"]
+        },
+    timeM: {
+        type: Number,
+        required: [true, "Ingresa los MINUTOS del vuelo"]
+        },
     plus: { //vfr, ifr, nocturna
         type: String,
-        required: true
+        required: [true, "Selecciona las condiciones del vuelo"]
     }
 })
 
 // modelo
-const Flight = mongoose.model("Flight", flightSchema)
+const Flight = mongoose.model("flights", flightSchema)
 
 // exportación
 module.exports = Flight

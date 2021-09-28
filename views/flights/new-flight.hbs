@@ -1,0 +1,38 @@
+<h2>Agregar vuelo</h2>
+
+    <form action="/flights/create" method="POST">
+    <label for="date">Fecha</label>
+    <input type="date" name="date" />
+    <label for="from">De:</label>
+    <select name="from">
+      {{#each airport}}
+        <option value="{{_id}}">{{name}}</option>
+      {{/each}}
+    </select>
+
+    <label for="to">A:</label>
+    <select name="to">
+      {{#each airport}}
+        <option value="{{_id}}">{{name}}</option>
+      {{/each}}
+    </select>
+    <label for="to">Tipo de vuelo</label>
+    <input type="text" name="to" placeholder="LOCAL, RUTA, TOQUES Y DESPEGUES"/>
+    <label for="plate">Matrícula</label>
+    <input type="text" name="plate"/>
+    <label for="model">Modelo del avión</label>
+    <input type="text" name="model"/>
+    <label for="timeH">Tiempo de vuelo (Horas)</label>
+    <input type="time" name="timeH"/>
+    <label for="timeM">Tiempo de vuelo (Minutos)</label>
+    <input type="time" name="timeM"/>
+    <label for="cast">cast</label>
+    <label for="plus">Modelo del avión</label>
+    <label for="plus">Selecciona:</label>
+    <select name="plus">
+      {{#each plus}} <!--ingresar en seeds vfr, ifr y nocturnas-->
+        <option value="{{_id}}">{{name}}</option>
+      {{/each}}
+    </select>  <button type="submit">Crear vuelo</button>
+
+</form>
