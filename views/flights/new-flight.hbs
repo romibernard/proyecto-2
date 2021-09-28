@@ -5,15 +5,15 @@
     <input type="date" name="date" />
     <label for="from">De:</label>
     <select name="from">
-      {{#each airport}}
-        <option value="{{_id}}">{{name}}</option>
+      {{#each airports}}
+        <option value="{{_id}}">{{codeOACI}}</option>
       {{/each}}
     </select>
 
     <label for="to">A:</label>
     <select name="to">
-      {{#each airport}}
-        <option value="{{_id}}">{{name}}</option>
+      {{#each airports}}
+        <option value="{{_id}}">{{codeOACI}}</option>
       {{/each}}
     </select>
     <label for="to">Tipo de vuelo</label>

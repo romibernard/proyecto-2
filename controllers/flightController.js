@@ -1,4 +1,5 @@
-const Flight = require("../models/flightModel")
+const Flight = require("")
+const Airports = require("../models/airportsModel")
 
 exports.getFlights = (req, res) => {
     Flight.find()
@@ -35,9 +36,9 @@ exports.createFlight = (req, res) => {
 }
 
 exports.getCreatedFlights = (req, res) => {
-    Flight.find()
-        .then((fly) => {
-            res.render("flights/new-flight", { flights: fly })
+    Airports.find()
+        .then((airports) => {
+            res.render("flights/new-flight", {airports})
         })
         .catch((e) => {
             console.log(e)

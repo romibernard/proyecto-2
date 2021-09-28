@@ -7,9 +7,9 @@ const Flight = require("../models/flightModel")
 //ver todos los vuelos
 router.get("/", flightController.getFlights)
 //crear vuelo
-router.get("/create", flightController.createFlight)
+router.get("/create", flightController.getCreatedFlights)
 //recibir info del formulario 
-router.post("/create", flightController.getCreatedFlights)
+router.post("/create", flightController.createFlight)
 //detalles
 router.get("/:id", flightController.flightDetails)
 //borrar vuelo
