@@ -11,7 +11,7 @@ const createSession = (app) => {
             cookie: {
                 sameSite: process.env.NODE_ENV === "production" ? "none": "lax",
                 secure: process.env.NODE_ENV === "production",
-                httponly: true, //pendiente confirmar si se puede quitar por el https
+                httponly: true, 
                 maxAge: 800000,
             },
             store: MongoStore.create({

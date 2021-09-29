@@ -2,10 +2,10 @@ const mongoose = require ("mongoose")
 
 const flightSchema = mongoose.Schema({
     date: {
-        type: Date,
+        type: String,
         required: [true, "Por favor ingresa una fecha"],
     },
-    timeD: {
+    time: {
         type: String,
     },
     from: {
@@ -44,11 +44,15 @@ const flightSchema = mongoose.Schema({
         required: [true, "Selecciona las condiciones del vuelo"],
         enum: ["VFR", "IFR", "Nocturno"],
         default: "VFR"
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     }
 })
 
 // modelo
-const Flight = mongoose.model("flights", flightSchema)
+const Flight = mongoose.model("Flights", flightSchema)
 
 // exportación
 module.exports = Flight

@@ -6,4 +6,6 @@ const routeGuard = require("../middlewares/route-guard")
 
 router.get("/profile", routeGuard.isLogIn, userController.createProfile)
 
+router.get("/flights", userController.getFlights) //crear controller
+
 module.exports = router

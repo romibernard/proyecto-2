@@ -1,8 +1,23 @@
 const Flight = require("./../models/flightModel")
 const Airports = require("./../models/airportsModel")
 
+/*exports.getFlights = (req, res) => {
+    Flight.find()
+    .populate("from")
+    .populate("to")
+    .then((flights) => {
+        const list = flights
+        console.log(list)
+        res.render("flights/flights", {flights: list})
+    })
+    .catch((e) => {
+        console.log(e)
+    })
+}
+*/
 exports.getFlights = (req, res) => {
-    Flight.find({})//prop que no se repita
+    //User.find({})
+    Flight.find()
     .populate("from")
     .populate("to")
     .then((flights) => {
@@ -16,10 +31,11 @@ exports.getFlights = (req, res) => {
 }
 
 exports.createFlight = (req, res) => {
-    const {date, timeD, from, to, kind, plate, model, timeH, timeM, plus} = req.body
+//    createFlight.user = req.user.id
+    const {date, time, from, to, kind, plate, model, timeH, timeM, plus} = req.body
     Flight.create({
         date,
-        timeD,
+        time,
         from,
         to,
         kind,
@@ -82,8 +98,8 @@ exports.editFlight = async (req, res) => {
 
 exports.editFlightForm = async (req, res) => {
     const { id } = req.params
-    const { date, timeD, from, to, kind, plate, model, timeH, timeM, plus } = req.body
-    Flight.findByIdAndUpdate(id, {date, timeD, from, to, kind, plate, model, timeH, timeM, plus})
+    const { date, time, from, to, kind, plate, model, timeH, timeM, plus } = req.body
+    Flight.findByIdAndUpdate(id, {date, time, from, to, kind, plate, model, timeH, timeM, plus})
         .then(() => {
             res.redirect("/flights")
         })

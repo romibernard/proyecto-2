@@ -11,7 +11,7 @@ const userSchema = mongoose.Schema({
         required: [true, "Ingresa un usuario válido (minúsculas)."],
         unique: true,
         lowercase: true,
-        trim: true
+        trim: true,
     },
     email: {
         type: String,
@@ -21,7 +21,11 @@ const userSchema = mongoose.Schema({
     passwordHash: {
         type: String,
         required: [true, "Ingresa una contraseña válida."]
-    }
+    },
+    flights: [
+        { type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Flights' }
+    ]
 })
 
 // modelo

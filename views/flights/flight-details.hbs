@@ -1,12 +1,11 @@
 <div clas="details" id="details">
 <h2>Vuelo de {{from/codeOACI}} hacia {{to/codeOACI}}</h2>
-<h3>Del día {{date}}</h3>
     <div class="trans-box" >
         <ul id="info">
             <li>Fecha:{{date}}</li>
-            <li>Hora de salida: {{timeD}}</li>
-            <li>De: {{from/codeOACI}}</li>
-            <li>A: {{to/codeOACI}}</li>
+            <li>Hora de salida: {{time}}</li>
+            <li>De: {{from/codeOACI}} {{from.name}}</li>
+            <li>A: {{to/codeOACI}} {{to.name}}</li>
             <li>Tipo de vuelo: {{kind}}</li>
             <li>Matrícula: {{plate}}</li>
             <li>Modelo del avión: {{model}}</li>

@@ -21,8 +21,8 @@ a {
 }
 #flylog {
   font-family: "Bebas Neue", cursive;
-  font-size: 4em;
-  letter-spacing: 0.06em;
+  font-size: 3.6em;
+  letter-spacing: 0.05em;
 }
 .home {
   background-image: url("../images/moving.gif");
@@ -39,6 +39,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
 }
 .nav-bar-ul {
   width: 100vw;
@@ -85,12 +86,14 @@ button {
   background-color: red;
 }
 h2 {
-  font-size: 2.8em;
+  font-size: 3em;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   text-shadow: 2px 3px 15px rgb(110, 155, 252);
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.06em;
 }
 
 #details,
@@ -140,4 +143,10 @@ h2 {
   background-repeat: repeat;
   height: 100vh;
   width: 100vw;
+}
+#start {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  text-align: end;
 }
