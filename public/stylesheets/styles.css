@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300&family=Montserrat:wght@300;400;500;600&display=swap");
 /*
   font-family: 'Bebas Neue', cursive;
   font-family: 'Josefin Sans', sans-serif;
@@ -20,9 +20,9 @@ a {
   color: black;
 }
 #flylog {
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
   font-size: 4em;
-  letter-spacing: 0.06em 
+  letter-spacing: 0.06em;
 }
 .home {
   background-image: url("../images/moving.gif");
@@ -69,12 +69,13 @@ a {
 .image-block {
   text-align: center;
   vertical-align: bottom;
-  }
-.submit, button {
+}
+.submit,
+button {
   font-size: 20px;
-  margin:10px;
+  margin: 10px;
   color: rgb(33, 37, 0);
-  text-decoration: none; 
+  text-decoration: none;
   background-color: rgb(110, 155, 252);
   text-decoration: none;
   height: 3em;
@@ -89,10 +90,13 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 2px 3px 15px rgb(110, 155, 252)
+  text-shadow: 2px 3px 15px rgb(110, 155, 252);
 }
 
-#details, #edit, #create, #all {
+#details,
+#edit,
+#create,
+#all {
   background-image: url("../images/window.jpeg");
   background-position: 0 0;
   background-size: cover;
@@ -106,7 +110,7 @@ h2 {
 .image-block {
   background-image: url("../images/window.jpeg");
   background-position: 0 0;
-  background-size: cover
+  background-size: cover;
 }
 .trans-box {
   margin: 10px;
@@ -119,5 +123,21 @@ h2 {
   font-family: "Montserrat", sans-serif, bold;
   font-size: 1.2em;
   color: black;
-  line-height: 100%
+  line-height: 100%;
+}
+#register,
+#login {
+  background-image: url("../images/fondo.png");
+  background-position: 0 0;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+.img-block {
+  background-image: url("../images/fondo.png");
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100vw;
 }

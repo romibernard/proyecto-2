@@ -1,17 +1,19 @@
-<div class="container d-flex justify-content-center">
+<div id="register">
+        <h2>Regístrate</h2>
+<div class="container d-flex justify-content-center" >
     <form action="/auth/signup" method="POST" class="w-50 d-flex flex-column mt-5 needs-validation" novalidate>
         <div class="mb-3">
             <label for="name" class="form-label">Ingresa tu nombre</label>
             <input type="text" name="name" id="name" class="form-control" placeholder="Nombre"required>
             <div class="invalid-feedback">
-                Please provide a Username
+                Por favor ingresa tu nombre.
             </div>
         </div>
         <div class="mb-3">
             <label for="username" class="form-label">Crea tu usuario</label>
             <input type="text" name="username" id="username" class="form-control" placeholder="usuario1" required>
             <div class="invalid-feedback">
-                Please provide a Username
+                Por favor ingresa un usuario válido.
             </div>
         </div>
         <div class="mb-3">
@@ -31,4 +33,5 @@
         <span class="text-danger mb-3">{{errorMessage}}</span>
         <button type="submit" class="btn btn-primary">Crear cuenta</button>
     </form>
+</div>
 </div>
