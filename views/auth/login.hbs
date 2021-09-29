@@ -1,16 +1,29 @@
 <div>
-    <h2>Iniciar sesión</h2>
-    <form action="/auth/login" method="POST">
-        <h2>Email</h2>
-        <input type="email" name="email" placeholder="ejemplo@gmail.com"/>
-
-        <h2>Password</h2>
-        <input type="password" name="password" placeholder="password"/>
-
-        <button type="submit">Iniciar sesión</button>
-
-        {{#if errorMessage}}
+    <h2>Inicia sesión</h2>
+<div class="container d-flex justify-content-center">
+    <form action="/auth/login" method="POST" class="w-50 d-flex flex-column mt-5 needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="username" class="form-control" placeholder="ejemplo@gmail.com" required>
+            <div class="invalid-feedback">
+                Por favor ingresa tu email.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="password" class="form-control" placeholder="password"required>
+            <div class="invalid-feedback">
+                Por favor ingresa tu contraseña.
+            </div>
+        </div>
+        <span class="text-danger mb-3">{{errorMessage}}</span>
+        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+    </form>
+</div>
+</div>
+<!--        {{#if errorMessage}}
             <p style="color: red">{{errorMessage}}</p>
         {{/if}}
     </form>
-</div>
+-->
+

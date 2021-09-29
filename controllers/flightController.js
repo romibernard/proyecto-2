@@ -1,8 +1,10 @@
-const Flight = require("")
-const Airports = require("../models/airportsModel")
+const Flight = require("./../models/flightModel")
+const Airports = require("./../models/airportsModel")
 
 exports.getFlights = (req, res) => {
-    Flight.find()
+    Flight.find({})//prop que no se repita
+    .populate("from")
+    .populate("to")
     .then((flights) => {
         const list = flights
         console.log(list)
@@ -14,9 +16,10 @@ exports.getFlights = (req, res) => {
 }
 
 exports.createFlight = (req, res) => {
-    const {date, from, to, kind, plate, model, timeH, timeM, plus} = req.body
+    const {date, timeD, from, to, kind, plate, model, timeH, timeM, plus} = req.body
     Flight.create({
         date,
+        timeD,
         from,
         to,
         kind,
@@ -48,6 +51,8 @@ exports.getCreatedFlights = (req, res) => {
 exports.flightDetails = (req, res) => {
     const { id } = req.params
     Flight.findById(id)
+    .populate("from")
+    .populate("to")
         .then((details) => {
             console.log(details)
             res.render("flights/flight-details", details)
@@ -71,22 +76,16 @@ exports.deleteFlight = (req, res) => {
 exports.editFlight = async (req, res) => {
     const { id } = req.params
     const editFlight = await Flight.findById(id)
-    Flight.find({})
-
-        .then(() => {
-            res.render("flights/edit-flight", { Flight: editFlight })
-        })
-        .catch((e) => {
-            console.log(e)
-        })
+    const editAirports = await Airports.find() //obj 2
+    return res.render("flights/edit-flight", { Flight: editFlight, airports: editAirports })
 }
 
 exports.editFlightForm = async (req, res) => {
     const { id } = req.params
-    const { date, from, to, kind, plate, model, timeH, timeM, plus } = req.body
-    Flight.findByIdAndUpdate(id, {date, from, to, kind, plate, model, timeH, timeM, plus})
+    const { date, timeD, from, to, kind, plate, model, timeH, timeM, plus } = req.body
+    Flight.findByIdAndUpdate(id, {date, timeD, from, to, kind, plate, model, timeH, timeM, plus})
         .then(() => {
-            res.redirect("/flight")
+            res.redirect("/flights")
         })
         .catch((e) => {
             console.log(e)

@@ -1,20 +1,28 @@
-<h2>Vuelo del día {{date}}</h2>
-    <div>
-            <p>{{date}}</p>
-            <p>{{from}}</p>
-            <p>{{to}}</p>
-            <p>{{kind}}</p>
-            <p>{{plate}}</p>
-            <p>{{model}}</p>
-            <p>{{timeH}}</p>
-            <p>{{timeM}}</p>
-            <p>{{plus}}</p>
-
-
-    <form action="/flights/{{_id}}/delete" method="POST">
-        <button type="submit">Borrar</button>
-    </form>        
+<div clas="details" id="details">
+<h2>Vuelo de {{from/codeOACI}} hacia {{to/codeOACI}}</h2>
+<h3>Del día {{date}}</h3>
+    <div class="trans-box" >
+        <ul id="info">
+            <li>Fecha:{{date}}</li>
+            <li>Hora de salida: {{timeD}}</li>
+            <li>De: {{from/codeOACI}}</li>
+            <li>A: {{to/codeOACI}}</li>
+            <li>Tipo de vuelo: {{kind}}</li>
+            <li>Matrícula: {{plate}}</li>
+            <li>Modelo del avión: {{model}}</li>
+            <li>Horas: {{timeH}}</li>
+            <li>Minutos: {{timeM}}</li>
+            <li>Condiciones: {{plus}}</li>
+        </ul>
     </div>
 
+    <form action="/flights/{{_id}}/delete" method="POST">
+        <button class="submit" id="delete" type="submit">Borrar</button>
+        <button class="submit"><a href="/flights">Regresar</a></button>
+        <button class="submit"><a href="/flights/{{_id}}/edit">Editar</a></button>
+    </form>        
 
-
+</div>
+<div class="image-block">
+    <img class="resize" src="../images/propeller.png" border=0 alt="propeller-bottom">
+</div>

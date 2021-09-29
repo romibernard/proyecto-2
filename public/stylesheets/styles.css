@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;400&family=Montserrat:ital,wght@0,100;0,400;0,700;1,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300&family=Montserrat:wght@300;400;500;600&display=swap');
 /*
   font-family: 'Bebas Neue', cursive;
   font-family: 'Josefin Sans', sans-serif;
@@ -15,10 +15,18 @@ body {
   height: 100%;
   margin: 0;
 }
-
+a {
+  text-decoration: none;
+  color: black;
+}
+#flylog {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 4em;
+  letter-spacing: 0.06em 
+}
 .home {
   background-image: url("../images/moving.gif");
-  font: 20px "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,7 +35,7 @@ body {
   padding-top: 50px;
   position: relative;
   color: rgb(26, 30, 36);
-  font-size: 30px;
+  font-size: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,4 +61,63 @@ body {
   font-size: 1.5em;
   text-decoration: none;
   color: rgb(236, 221, 189);
+}
+.resize {
+  width: 100px;
+  height: auto;
+}
+.image-block {
+  text-align: center;
+  vertical-align: bottom;
+  }
+.submit, button {
+  font-size: 20px;
+  margin:10px;
+  color: rgb(33, 37, 0);
+  text-decoration: none; 
+  background-color: rgb(110, 155, 252);
+  text-decoration: none;
+  height: 3em;
+  width: auto;
+}
+#delete {
+  background-color: red;
+}
+h2 {
+  font-size: 2.8em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 3px 15px rgb(110, 155, 252)
+}
+
+#details, #edit, #create, #all {
+  background-image: url("../images/window.jpeg");
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: repeat;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 50px;
+  position: relative;
+  align-items: center;
+}
+.image-block {
+  background-image: url("../images/window.jpeg");
+  background-position: 0 0;
+  background-size: cover
+}
+.trans-box {
+  margin: 10px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.7;
+  text-align: center;
+}
+#info {
+  font-family: "Montserrat", sans-serif, bold;
+  font-size: 1.2em;
+  color: black;
+  line-height: 100%
 }

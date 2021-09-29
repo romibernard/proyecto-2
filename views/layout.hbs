@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/stylesheets/styles.css"/>
     <title>My Flying Log</title>
 </head>
 <body id="layout">
     <nav class="nav-bar" id="nav-layout">
         <ul class="nav-bar-ul" id="nav-ul">
-                <li><a href="#"></a>My Flying Log</li>
+                <li><a href="/">My Flying Log</a></li>
 
             {{#if currentUser }}
                 <li><a href="/user/profile">Mi perfil</a></li>
                 <li><a href="/flights">Mis vuelos</a></li>
-                <li>
-                    <form action="/auth/logout" method="POST">
-                        <button>Cerrar sesión</button>
-                    </form>
-                </li>
 
             {{else}}
 

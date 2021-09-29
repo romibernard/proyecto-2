@@ -1,13 +1,17 @@
+<div class="all" id="all">
 <h2>Todos mis vuelos</h2>
+            <button class="submit"><a href="/flights/create">Crear vuelo</a></button>
     <div>
         {{#each flights}}
-            <h3>{{date}}</h3>
-            <p>{{from}}</p>
-            <p>{{to}}</p>
-            <p>{{plate}}</p>
-
-            <button><a href="/flights/{{_id}}">Detalles</a></button>
-
+            <h3>Vuelo de: {{from.codeOACI}} a: {{to/codeOACI}}</h3>
+            <p>Hora de salida: {{timeD}} hrs.</p>
+            <p>Matrícula: {{plate}}</p>
+            <p>{{date}}</p>
+            <span><button class="submit"><a href="/flights/{{_id}}">Detalles</a></button></span>
         {{/each}}
-            <button><a href="/flights/create">Crear vuelo</a></button>
     </div>
+
+    <div class="image-block">
+    <img class="resize" src="../images/propeller.png" border=0 alt="propeller-bottom">
+    </div>
+</div>

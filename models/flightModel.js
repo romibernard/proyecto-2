@@ -2,8 +2,11 @@ const mongoose = require ("mongoose")
 
 const flightSchema = mongoose.Schema({
     date: {
-        type: Number,
+        type: Date,
         required: [true, "Por favor ingresa una fecha"],
+    },
+    timeD: {
+        type: String,
     },
     from: {
         type: mongoose.Schema.Types.ObjectId,
@@ -13,7 +16,11 @@ const flightSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "airports"
     },
-    kind: String, //local, ruta, toque y despegues
+    kind:  {
+        type: String,
+        enum: ["LOCAL", "RUTA", "TOQUES Y DESPEGUES"],
+        default: "LOCAL"
+        },
     plate: {
         type: String,
         required: [true, "Ingresa una matrícula."],
@@ -34,7 +41,9 @@ const flightSchema = mongoose.Schema({
         },
     plus: { //vfr, ifr, nocturna
         type: String,
-        required: [true, "Selecciona las condiciones del vuelo"]
+        required: [true, "Selecciona las condiciones del vuelo"],
+        enum: ["VFR", "IFR", "Nocturno"],
+        default: "VFR"
     }
 })
 
