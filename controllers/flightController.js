@@ -1,5 +1,6 @@
 const Flight = require("./../models/flightModel")
 const Airports = require("./../models/airportsModel")
+const User = require("./../models/userModel")
 
 /*exports.getFlights = (req, res) => {
     Flight.find()
@@ -39,9 +40,9 @@ exports.createFlight = async (req, res) => {
     //    createFlight.user = req.user.id
     const userId = req.session.currentUser._id;
     console.log("userId", userId);
-    const { date, time, from, to, kind, plate, model, timeH, timeM, plus } =
-      req.body;
-    const newFlight = Flight.create({
+    const { date, time, from, to, kind, plate, model, timeH, timeM, plus } = 
+        req.body;
+    const newFlight = await Flight.create({
       date,
       time,
       from,
@@ -52,10 +53,10 @@ exports.createFlight = async (req, res) => {
       timeH,
       timeM,
       plus,
-      //user: userId,
+      user: userId,
     });
     console.log(newFlight);
-   // await User.findByIdAndUpdate(userId, { $push: { flights: newFlight._id } });
+    await User.findByIdAndUpdate({_id: userId}, { $push: { flights: newFlight._id } });
     return res.redirect("/flights/");
   };
 
