@@ -107,10 +107,61 @@ button:hover {
 }
 #btn-delete,
 #btn-return,
-#btn-edit,
-#btn-create {
+#btn-edit {
   margin-left: 19%;
 }
+#btn-login-out {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  height: 2.5em;
+  width: 9em;
+  margin-top: 8px;
+  margin-left: 0%;
+}
+#btn-logout-layout {
+  background-color: rgb(4, 53, 117);
+  border-color: rgb(4, 53, 117);
+  color: rgb(236, 221, 189);
+  box-shadow: rgb(38, 168, 255);
+  height: 2em;
+  width: 9em;
+  margin: 0;
+}
+#btn-logout-layout:hover {
+  background-color: rgb(38, 168, 255);
+  border-color: rgb(2, 103, 170);
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+#btn-create {
+  background-color: rgb(56, 172, 250);
+  border-color: rgb(1, 119, 197);
+  color: rgb(11, 7, 71);
+  height: 2.5em;
+  width: 9em;
+  transition: all 0.4s;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+#btn-create:after {
+  color: rgb(11, 7, 71);
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20%;
+  transition: 0.4s;
+}
+#btn-create:hover {
+  padding-right: 25px;
+}
+#btn-create:hover:after {
+  opacity: 1;
+  right: 0;
+}
+
 #btn-logout,
 #btn-modify {
   font-family: "Montserrat", sans-serif;
@@ -200,7 +251,6 @@ h2 {
   width: 70%;
   padding: 1%;
 }
-
 #info {
   font-family: "Montserrat", sans-serif, bold;
   font-size: 1.2em;
@@ -209,7 +259,6 @@ h2 {
   margin-bottom: 9px;
   list-style-type: none;
 }
-
 .img-block {
   background-image: url("../images/fondo.png");
   background-position: 0 0;
@@ -230,4 +279,7 @@ h2 {
   font-family: "Bebas Neue", cursive;
   letter-spacing: 0.06em;
   padding-top: 1em;
+}
+#list-new {
+  text-align: center;
 }

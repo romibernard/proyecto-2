@@ -1,47 +1,48 @@
 <div class="create" id="create">
 <h2>Agregar vuelo</h2>
-
+<ul id="list-new">
     <form action="/flights/create" method="POST">
-    <label for="date">Fecha</label>
-    <input type="date" name="date" />
-    <label for="time">Hora de salida</label>
-    <input type="time" name="time"/>
-    <label for="from">De:</label>
+    <li><label for="date">Fecha</label>
+    <input type="date" name="date" /></li>
+    <li><label for="time">Hora de salida</label>
+    <input type="time" name="time"/></li>
+    <li><label for="from">De:</label>
     <select name="from">
       {{#each airports}}
         <option value="{{_id}}">{{codeOACI}} ({{name}})</option>
       {{/each}}
-    </select>
+    </select></li>
 
-    <label for="to">A:</label>
+    <li><label for="to">A:</label>
     <select name="to">
       {{#each airports}}
         <option value="{{_id}}">{{codeOACI}} ({{name}})</option>
       {{/each}}
-    </select>
-    <label for="kind">Tipo de vuelo</label>
+    </select></li>
+    <li><label for="kind">Tipo de vuelo</label>
     <select name="kind">
         <option value="LOCAL">LOCAL</option>
         <option value="RUTA">RUTA</option>
         <option value="TOQUES Y DESPEGUES">TOQUES Y DESPEGUES</option>
-    </select>
-    <label for="plate">Matrícula</label>
-    <input type="text" name="plate"/>
-    <label for="model">Modelo del avión</label>
-    <input type="text" name="model"/>
-    <label for="timeH">Tiempo de vuelo (Horas)</label>
-    <input type="number" name="timeH"/>
-    <label for="timeM">Tiempo de vuelo (Minutos)</label>
-    <input type="number" name="timeM"/>
-    <label for="plus">Condiciones:</label>
+    </select></li>
+    <li><label for="plate">Matrícula</label>
+    <input type="text" name="plate"/></li>
+    <li><label for="model">Modelo del avión</label>
+    <input type="text" name="model"/></li>
+    <li><label for="timeH">Tiempo de vuelo (Horas)</label>
+    <input type="number" name="timeH"/></li>
+    <li><label for="timeM">Tiempo de vuelo (Minutos)</label>
+    <input type="number" name="timeM"/></li>
+    <li><label for="plus">Condiciones:</label>
     <select name="plus">
         <option value="VFR">VFR</option>
         <option value="IFR">IFR</option>
         <option value="Nocturno">Nocturno</option>
-    </select>  
-    <button class="submit" type="submit">Crear vuelo</button>
-
+    </select></li>
+    </br>
+    <button class="submit" id="btn-create" type="submit">Crear vuelo</button>
+<br>
 </form>
-
+</ul>
     <button class="submit"><a href="/flights">Regresar</a></button>
 </div>

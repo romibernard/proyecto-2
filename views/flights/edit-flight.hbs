@@ -1,47 +1,48 @@
 <div class="edit" id="edit">
 <h2>Modificar vuelo</h2>
-
+<ul id="list-new">
     <form action="/flights/{{Flight.id}}/edit" method="POST">
-    <label for="date">Fecha</label>
-    <input type="date" name="date" value={{Flight.date}}/>
-    <label for="time">Hora de salida</label>
-    <input type="time" name="time" value={{Flight.time}}/>
-    <label for="from">De:</label>
+    <li><label for="date">Fecha</label>
+    <input type="date" name="date" value={{Flight.date}}/></li>
+    <li><label for="time">Hora de salida</label>
+    <input type="time" name="time" value={{Flight.time}}/></li>
+    <li><label for="from">De:</label>
     <select name="from">
       {{#each airports}}
         <option value="{{_id}}">{{codeOACI}} ({{name}})</option>
       {{/each}}
-    </select>
+    </select></li>
 
-    <label for="to">A:</label>
+    <li><label for="to">A:</label>
     <select name="to">
       {{#each airports}}
         <option value="{{_id}}">{{codeOACI}} ({{name}})</option>
       {{/each}}
-    </select>
-    <label for="kind">Tipo de vuelo</label>
+    </select></li>
+    <li><label for="kind">Tipo de vuelo</label>
     <select name="kind">
         <option value="LOCAL">LOCAL</option>
         <option value="RUTA">RUTA</option>
         <option value="TOQUES Y DESPEGUES">TOQUES Y DESPEGUES</option>
-    </select>
-    <label for="plate">Matrícula</label>
-    <input type="text" name="plate" value={{Flight.plate}}/>
-    <label for="model">Modelo del avión</label>
-    <input type="text" name="model" value={{Flight.model}}/>
-    <label for="timeH">Tiempo de vuelo (Horas)</label>
-    <input type="number" name="timeH" value={{Flight.timeH}}/>
-    <label for="timeM">Tiempo de vuelo (Minutos)</label>
-    <input type="number" name="timeM"value={{Flight.timeM}}/>
-    <label for="plus">Condiciones:</label>
+    </select></li>
+    <li><label for="plate">Matrícula</label>
+    <input type="text" name="plate" value={{Flight.plate}}/></li>
+    <li><label for="model">Modelo del avión</label>
+    <input type="text" name="model" value={{Flight.model}}/></li>
+    <li><label for="timeH">Tiempo de vuelo (Horas)</label>
+    <input type="number" name="timeH" value={{Flight.timeH}}/></li>
+    <li><label for="timeM">Tiempo de vuelo (Minutos)</label>
+    <input type="number" name="timeM"value={{Flight.timeM}}/></li>
+    <li><label for="plus">Condiciones:</label>
     <select name="plus">
         <option value="VFR">VFR</option>
         <option value="IFR">IFR</option>
         <option value="Nocturno">Nocturno</option>
-    </select>  
+    </select></li> 
     <button class="submit" id="btn-modify" type="submit">Modificar vuelo</button>
 
 </form>
+</ul>
 
     <button class="submit"><a href="/flights">Regresar</a></button>
 

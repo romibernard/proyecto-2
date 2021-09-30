@@ -1,19 +1,16 @@
 <div class="all" id="all">
 
 <h2>Todos mis vuelos</h2>
-            <span><button class="submit" id="btn-create"><a href="/flights/create">Crear vuelo</a></button></span>
+            <span><button class="submit" id="btn-create"><a href="/flights/create">+ Crear vuelo</a></button></span>
     <div id="flights">
         {{#each flights}}
             <h3>Vuelo de: {{from.codeOACI}} a: {{to/codeOACI}}</h3>
             <p>Hora de salida: {{time}} hrs.</p>
             <p>Matrícula: {{plate}}</p>
             <p>{{date}}</p>
-            <span><button class="submit"><a href="/flights/{{_id}}">Detalles</a></button></span>
+            <span><button class="submit"><a href="/flights/{{_id}}">✈ Detalles</a></button></span>
             </hr>
         {{/each}}
     </div>
 
 </div>
-
-<!--        <p>Inicia sesión para visualizar los vuelos</p>
--->
