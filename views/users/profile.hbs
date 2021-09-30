@@ -1,28 +1,29 @@
-<div class="profile">
+<div class="profile" id="profile">
     <h2>Mi perfil</h2>
 
     {{#if foundUser}}
 
-        Bienvenido, {{foundUser.name}}
+        <h3 id="welcome">¡Bienvenido, {{foundUser.name}}!</h3>
 
-        <p>Usuario: {{foundUser.username}}</p>
+        <p id="p-prof">Usuario: {{foundUser.username}}</p>
 
-        <p>Email: {{foundUser.email}}</p>
+        <p id="p-prof">Email: {{foundUser.email}}</p>
 
+    <div>
+        <ul>
+            <li>
+                <form action="/auth/logout" method="POST">
+                    <button id="btn-logout">Cerrar sesión</button>
+                </form>
+            </li>
+        </ul>
+    </div>
 
     {{else}}
         <p>Aún no has iniciado sesión</p>
     {{/if}}
 </div>
-    <div>
-        <ul>
-            <li>
-                <form action="/auth/logout" method="POST">
-                    <button id="logout">Cerrar sesión</button>
-                </form>
-            </li>
-        </ul>
-    </div>
+
 
 <div class="image-block">
     <img class="resize" src="../images/propeller.png" border=0 alt="propeller-bottom">

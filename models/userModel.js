@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema({
     },
     flights: [
         { type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Flights' }
+        ref: 'Flight' }
     ]
 })
 

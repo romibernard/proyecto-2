@@ -16,43 +16,48 @@ const Airports = require("./../models/airportsModel")
 }
 */
 exports.getFlights = (req, res) => {
+    const _id = req.session.currentUser._id;
+    console.log("_id", _id)
     //User.find({})
-    Flight.find()
-    .populate("from")
-    .populate("to")
-    .then((flights) => {
+    Flight.find(/*{_id}*/)
+      .populate("from")
+      .populate("to")
+      .populate("user")
+      .then((flights) => {
+        console.log(flights)
         const list = flights
-        console.log(list)
-        res.render("flights/flights", {flights: list})
-    })
-    .catch((e) => {
+        //  console.log(list);
+        res.render("flights/flights", { flights: list })
+      })
+      .catch((e) => {
         console.log(e)
-    })
-}
+      })
+  }
 
-exports.createFlight = (req, res) => {
-//    createFlight.user = req.user.id
-    const {date, time, from, to, kind, plate, model, timeH, timeM, plus} = req.body
-    Flight.create({
-        date,
-        time,
-        from,
-        to,
-        kind,
-        plate,
-        model,
-        timeH,
-        timeM,
-        plus
-    })
-    .then((newFlight) => {
-        console.log(newFlight)
-        res.redirect("/flights")
-    })
-    .catch((e) => {
-        console.log(e)
-    })
-}
+//flightController
+exports.createFlight = async (req, res) => {
+    //    createFlight.user = req.user.id
+    const userId = req.session.currentUser._id;
+    console.log("userId", userId);
+    const { date, time, from, to, kind, plate, model, timeH, timeM, plus } =
+      req.body;
+    const newFlight = Flight.create({
+      date,
+      time,
+      from,
+      to,
+      kind,
+      plate,
+      model,
+      timeH,
+      timeM,
+      plus,
+      //user: userId,
+    });
+    console.log(newFlight);
+   // await User.findByIdAndUpdate(userId, { $push: { flights: newFlight._id } });
+    return res.redirect("/flights/");
+  };
 
 exports.getCreatedFlights = (req, res) => {
     Airports.find()

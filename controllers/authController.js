@@ -8,19 +8,23 @@ exports.signUp = (req, res) => {
 }
 
 exports.signUpForm = async (req, res) => {
-    const {name, username, email, password} = req.body
-    //base de encriptación
-    const salt = await bcryptjs.genSalt(saltRounds)
-    //contra mezclada con salt y encriptada
-    const hashedPassword = await bcryptjs.hash(password, salt)
-    const newUser = await User.create({
-        name,
-        username,
-        email,
-        passwordHash: hashedPassword
-    })
-    console.log(newUser)
-    res.redirect("/")
+    const { name, username, email, password } = req.body
+    try {
+        if (!username || !email || !password || !username.length || !email.length || !password.length) throw new Error("Uno o mas campos son erróneos.")
+        const salt = await bcryptjs.genSalt(saltRounds)
+        const hashedPassword = await bcryptjs.hash(password, salt)
+
+        const newUser = await User.create({
+            name,
+            username,
+            email,
+            passwordHash: hashedPassword,
+        })
+        console.log(newUser)
+        res.redirect("/login")
+    } catch (error) {
+        res.render("auth/signup", { errorMessage: error.message })
+    }
 }
 
 exports.loginUser = async (req, res) => {
@@ -55,7 +59,7 @@ exports.loginUserForm = async (req, res) => {
         return res.redirect("/user/profile")
         //manejo de errores
     } catch (e){
-        console.log(e)
+        res.render("auth/login", { errorMessage: error.message })
     }
 }
 
