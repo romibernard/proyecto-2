@@ -107,27 +107,40 @@ button:hover {
 }
 #btn-delete,
 #btn-return,
-#btn-edit {
-  margin-left: 17%;
+#btn-edit,
+#btn-create {
+  margin-left: 19%;
 }
 #btn-logout,
-#btn-modify,
-#btn-register,
-#btn-login {
+#btn-modify {
+  font-family: "Montserrat", sans-serif;
   height: 2.5em;
   width: 9em;
   margin-top: 8px;
   margin-left: 0%;
 }
-h2 {
-  font-size: 3em;
-  text-align: center;
+#btn-register,
+#btn-login {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+  margin: 0%;
+}
+h2 {
+  font-size: 3em;
+  text-align: center;
   text-shadow: 2px 3px 15px rgb(110, 155, 252);
   font-family: "Bebas Neue", cursive;
   letter-spacing: 0.06em;
+}
+#hd-date {
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.5em;
+  letter-spacing: 0.06em;
+  text-align: center;
 }
 #p-prof,
 #welcome {
@@ -151,12 +164,23 @@ h2 {
   position: relative;
   align-items: center;
 }
+#register,
+#login,
+#logout {
+  background-image: url("../images/fondo.png");
+  background-position: 0 0;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
 #welcome {
   font-size: 3em;
 }
 #profile,
 #flights,
-#logout {
+#logout,
+#login,
+#register {
   text-align: center;
   position: relative;
   align-items: center;
@@ -182,18 +206,10 @@ h2 {
   font-size: 1.2em;
   color: black;
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: 9px;
   list-style-type: none;
 }
-#register,
-#login,
-#logout {
-  background-image: url("../images/fondo.png");
-  background-position: 0 0;
-  background-size: cover;
-  height: 100vh;
-  width: 100vw;
-}
+
 .img-block {
   background-image: url("../images/fondo.png");
   background-position: 0 0;
