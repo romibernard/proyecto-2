@@ -185,6 +185,7 @@ button:hover {
   justify-content: right;
   position: absolute;
   align-items: right;
+  float: right;
 }
 h2 {
   font-size: 3em;

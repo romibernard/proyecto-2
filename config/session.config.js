@@ -12,7 +12,7 @@ const createSession = (app) => {
                 sameSite: process.env.NODE_ENV === "production" ? "none": "lax",
                 secure: process.env.NODE_ENV === "production",
                 httponly: true, 
-                maxAge: 1200000,
+                maxAge: 1800000,
             },
             store: MongoStore.create({
                 mongoUrl: process.env.MONGODB_URL,
