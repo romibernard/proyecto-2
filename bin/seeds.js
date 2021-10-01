@@ -3,7 +3,7 @@ const Airports   = require("./../models/airportsModel")
 
 require('dotenv').config()
 
-mongoose.connect("mongodb://localhost:27017/proyecto-2", {
+mongoose.connect("mongodb+srv://romlopez1:holamundo@cluster0.mnatq.mongodb.net/proyecto-2", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

@@ -107,7 +107,7 @@ exports.editFlightForm = async (req, res) => {
     const { date, time, from, to, kind, plate, model, timeH, timeM, plus } = req.body
     Flight.findByIdAndUpdate(id, {date, time, from, to, kind, plate, model, timeH, timeM, plus})
         .then(() => {
-            res.redirect("user/flights")
+            res.redirect("/user/flights")
         })
         .catch((e) => {
             console.log(e)
