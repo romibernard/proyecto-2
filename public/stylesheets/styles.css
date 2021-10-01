@@ -41,14 +41,37 @@ a {
   align-items: center;
   flex-direction: row;
 }
-.nav-bar-ul {
+footer {
   width: 100vw;
   margin: auto;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  background-color: rgb(23, 76, 146);
+  padding: 0.7% 0.8em;
+  position: relative;
+  font-size: 1em;
+  text-decoration: none;
+  color: rgb(236, 221, 189);
+}
+.footer,
+#footer {
+  color: rgb(236, 221, 189);
+}
+#footer-img {
+  width: 3em;
+  height: auto;
+}
+.nav-bar-ul,
+.footer-list {
+  color: rgb(236, 221, 189);
+  width: 100vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
 }
 
-.nav-bar-ul li {
+.nav-bar-ul,
+.footer-list li {
   list-style-type: none;
   text-align: center;
   color: rgb(236, 221, 189);
@@ -218,11 +241,13 @@ h2 {
   width: 100vw;
   padding-top: 50px;
 }
-.all {
+.all,
+#all,
+#flights,
+.flights {
   background-image: url("../images/window.jpeg");
-  height: 100%;
-  width: 100%;
-  background-repeat: repeat;
+  background-size: cover;
+  background-repeat: repeat-y;
 }
 #register,
 #login,
