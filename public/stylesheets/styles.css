@@ -247,6 +247,7 @@ h2 {
 .flights {
   background-image: url("../images/window.jpeg");
   background-size: cover;
+  height: 100vh;
   background-repeat: repeat-y;
 }
 #register,
