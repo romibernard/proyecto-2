@@ -5,12 +5,17 @@
         {{#each flights}}
             <div class="trans-box-all" >
             <h3>Vuelo del día {{date}}</h3>
-            <p>Hora de salida: {{time}} hrs.</p>
-            <p>Matrícula: {{plate}}</p>
-            <p>Vuelo de: {{from.codeOACI}} a: {{to/codeOACI}}</p>
+        <ul id="info">
+            <li>Hora de salida: {{time}} hrs.</li>
+            <li>Matrícula: {{plate}}</li>
+            <li>Duración: {{timeH}}hrs. {{timeM}}mins.</li>
+            <li>Modelo del avión: {{model}}</li>
+        </ul>
             <span><button class="submit"><a href="/flights/{{_id}}">✈ Detalles</a></button></span>
             </hr>
             </div>
         {{/each}}
     </div>
 </div>
+<!--            <p>Vuelo de: {{from.codeOACI}} a: {{to/codeOACI}}</p>
+-->
