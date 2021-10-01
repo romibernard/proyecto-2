@@ -21,7 +21,7 @@ a {
 }
 #flylog {
   font-family: "Bebas Neue", cursive;
-  font-size: 3.6em;
+  font-size: 3.5em;
   letter-spacing: 0.05em;
 }
 .home {
@@ -210,17 +210,18 @@ h2 {
 #details,
 #edit,
 #create,
-#all,
 #profile {
   background-image: url("../images/window.jpeg");
-  background-position: 0 0;
-  background-size: cover;
+  background-size: 100%;
   background-repeat: repeat;
   height: 100vh;
   width: 100vw;
   padding-top: 50px;
-  position: relative;
-  align-items: center;
+}
+.all {
+  background-image: url("../images/window.jpeg");
+  background-size: 100%;
+  background-repeat: repeat;
 }
 #register,
 #login,
@@ -258,6 +259,15 @@ h2 {
   width: 70%;
   padding: 1%;
 }
+.trans-box-all {
+  margin: 0 32%;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.8;
+  text-align: center;
+  width: 35%;
+  padding: 1%;
+}
 #info {
   font-family: "Montserrat", sans-serif, bold;
   font-size: 1.2em;
@@ -265,14 +275,6 @@ h2 {
   position: relative;
   margin-bottom: 9px;
   list-style-type: none;
-}
-.img-block {
-  background-image: url("../images/fondo.png");
-  background-position: 0 0;
-  background-size: cover;
-  background-repeat: repeat;
-  height: 100vh;
-  width: 100vw;
 }
 #start {
   display: flex;
