@@ -88,7 +88,7 @@ exports.deleteFlight = (req, res) => {
     const { id } = req.params
     Flight.findByIdAndRemove(id)
         .then(() => {
-            res.redirect("/flights")
+            res.redirect("/user/flights/")
         })
         .catch((e) => {
             console.log(e)
