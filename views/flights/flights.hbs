@@ -4,10 +4,10 @@
             <span><button class="submit" id="btn-create"><a href="/flights/create">+ Crear vuelo</a></button></span>
         {{#each flights}}
             <div class="trans-box-all" >
-            <h3>Vuelo de: {{from.codeOACI}} a: {{to/codeOACI}}</h3>
+            <h3>Vuelo del día {{date}}</h3>
             <p>Hora de salida: {{time}} hrs.</p>
             <p>Matrícula: {{plate}}</p>
-            <p>{{date}}</p>
+            <p>Vuelo de: {{from.codeOACI}} a: {{to/codeOACI}}</p>
             <span><button class="submit"><a href="/flights/{{_id}}">✈ Detalles</a></button></span>
             </hr>
             </div>

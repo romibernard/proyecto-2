@@ -57,7 +57,7 @@ exports.createFlight = async (req, res) => {
     });
     console.log(newFlight);
     await User.findByIdAndUpdate({_id: userId}, { $push: { flights: newFlight._id } });
-    return res.redirect("/flights/");
+    return res.redirect("/user/flights/");
   };
 
 exports.getCreatedFlights = (req, res) => {
